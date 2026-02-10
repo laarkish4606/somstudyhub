@@ -9,7 +9,7 @@ const Header = () => {
       <Link to="/">Home</Link>
       <Link to="grade6">Grade6</Link>
       <Link to="grade8">Grade8</Link>
-      {/* <Link to="entranceexam">entrance exam</Link> */}
+      <Link to="entranceexam">entrance exam</Link>
       <Link to="developer">developers</Link>
       <Link to="contact">contact</Link>
       <Link to="login">login</Link>
