@@ -1,22 +1,22 @@
 import { Link } from "react-router-dom"
 const Header = () => {
   return (
-    <div className="bg-secondary text-2xl font-heading w-full font-normal p-4">
-      <img src="" alt="" />
-      <div className="flex justify-between">
-    <h1 className="text-3xl capitalize">somstudyhub</h1>
-    <nav className="flex justify-center items-center gap-3 capitalize">
-      <Link to="/">Home</Link>
-      <Link to="grade6">Grade6</Link>
-      <Link to="grade8">Grade8</Link>
-      <Link to="entranceexam">entrance exam</Link>
-      <Link to="developer">developers</Link>
-      <Link to="contact">contact</Link>
-      <Link to="login">login</Link>
-      <Link to="icon">icon</Link>
-    </nav>
-    </div>
-    </div>
+    <header className="bg-secondary text-white p-4">
+      <div className="container mx-auto flex items-center justify-between">
+        <h1 className="text-2xl font-bold">SomStudyHub</h1>
+        <nav>
+          <ul className="flex space-x-4 text-lg text-black">
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="grade6">Grade6</Link></li>
+            <li><Link to="grade8">Grade8</Link></li>
+            <li><Link to="entranceexam">Entrance Exam</Link></li>
+            <li><Link to="developer">Developers</Link></li>
+            <li><Link to="contact">Contact</Link></li>
+            <li><Link to="login">Login</Link></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
   )
 }
 
