@@ -2,22 +2,58 @@ import bgImage from '../../assets/home.jpg';
 
 const HeroSection = () => {
   return (
+    <div className="relative h-screen w-full overflow-hidden">
+      
+      {/* Background Image with overlay */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${bgImage})` }}
+      >
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+      </div>
 
-    <div className="relative bg-secondary text-black py-20">
-      <div className="container mx-auto flex items-center justify-between gap-10">
-        <div className="w-1/2">
-          <button className="bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg mb-4">Trusted by 12,500+ Students</button>
-          <h1 className="text-6xl font-bold mb-4">Access Past Exams for <span className='text-primary'>Grades 6, 8 & 12</span> Anytime, Anywhere</h1>
-          <p className="text-lg mb-6">Comprehensive exam archive platform designed to help students excel. Browse hundreds of past exams, practice effectively, and boost your academic performance with our organized collection.</p>
-          <div>
-            <button className="bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg mr-4">Get Started</button>
-            <button className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-lg">Learn More</button>
+      {/* Content */}
+      <div className="relative z-10 container mx-auto px-6 flex flex-col lg:flex-row items-center justify-between h-full">
+        
+        {/* Left Text */}
+        <div className="lg:w-1/2 text-center lg:text-left text-white space-y-6">
+          <span className="inline-block bg-indigo-600/80 px-4 py-2 rounded-full text-sm font-semibold uppercase tracking-wide shadow-md">
+            Trusted by 12,500+ Students
+          </span>
+
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mt-4 animate-fadeIn">
+            Access Past Exams for <span className="text-indigo-400">Grades 6, 8 & 12</span> Anytime, Anywhere
+          </h1>
+
+          <p className="text-white/80 text-lg md:text-xl max-w-lg mt-4 animate-fadeIn delay-200">
+            Comprehensive exam archive platform designed to help students excel. Browse hundreds of past exams, practice effectively, and boost your academic performance.
+          </p>
+
+          <div className="mt-6 flex flex-wrap justify-center lg:justify-start gap-4 animate-fadeIn delay-400">
+            <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition transform hover:scale-105">
+              Get Started
+            </button>
+            <button className="bg-white/20 hover:bg-white/40 text-white font-bold py-3 px-6 rounded-full shadow-lg transition transform hover:scale-105">
+              Learn More
+            </button>
           </div>
         </div>
-        <div className="w-1/2">
-          <img src={bgImage} alt="Student Studying" className="w-full rounded-lg shadow-lg" />
+
+        {/* Right Image */}
+        <div className="lg:w-1/2 mt-10 lg:mt-0 flex justify-center lg:justify-end animate-fadeIn">
+          <img
+            src={bgImage}
+            alt="Student Studying"
+            className="w-full max-w-lg rounded-2xl shadow-2xl border-2 border-white/20"
+          />
         </div>
+
       </div>
+
+      {/* Decorative Circles */}
+      <div className="absolute top-0 left-0 w-64 h-64 bg-indigo-500/30 rounded-full filter blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-pink-500/30 rounded-full filter blur-3xl translate-x-1/3 translate-y-1/3"></div>
+
     </div>
   )
 }
