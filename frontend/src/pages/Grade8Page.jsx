@@ -1,6 +1,5 @@
 import React from 'react'
-import Grade8 from '../components/grades/grade8'
-
+import Grade8 from "../components/grades/grade8"
 const Grade8Page = () => {
   return (
     <div>

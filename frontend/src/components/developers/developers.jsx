@@ -1,28 +1,72 @@
-import React from 'react'
+// import React from 'react'
+// import dev1 from '../../assets/dev1.jpg'
+// import dev2 from '../../assets/dev2.jpg'
+// import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
-const Developers = () => {
-  return (
-    <div className='flex flex-col items-center justify-center min-h-screen bg-gray-100'>
-      <h2 className='text-3xl font-bold mb-6'>Meet the Developers</h2>
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-        <div className='bg-white p-6 rounded shadow-md text-center'>
-          <img src='/images/developer1.jpg' alt='Developer 1' className='w-24 h-24 rounded-full mx-auto mb-4' />
-          <h3 className='text-xl font-bold'>Abdikadir Mohamed</h3>
-          <p className='text-gray-600'>Full Stack Developer</p>
-        </div>
-        <div className='bg-white p-6 rounded shadow-md text-center'>
-          <img src='/images/developer2.jpg' alt='Developer 2' className='w-24 h-24 rounded-full mx-auto mb-4' />
-          <h3 className='text-xl font-bold'>Ahmed Mahamed</h3>
-          <p className='text-gray-600'>Frontend Developer</p>
-        </div>
-        <div className='bg-white p-6 rounded shadow-md text-center'>
-          <img src='/images/developer3.jpg' alt='Developer 3' className='w-24 h-24 rounded-full mx-auto mb-4' />
-          <h3 className='text-xl font-bold'>Mohamed Ali</h3>
-          <p className='text-gray-600'>Backend Developer</p>
-        </div>
-      </div>
-    </div>
-  )
-}
+// const developers = [
+//   {
+//     name: 'Ahmed Mohamed',
+//     role: 'Full-Stack Developerr',
+//     image: dev1,
+//     github: 'https://github.com/ahmed',
+//     linkedin: 'https://linkedin.com/in/ahmed',
+//     twitter: 'https://twitter.com/ahmed',
+//   },
+//   {
+//     name: 'Somali Ali',
+//     role: 'Full-Stack Developer',
+//     image: dev2,
+//     github: 'https://github.com/somali',
+//     linkedin: 'https://linkedin.com/in/somali',
+//     twitter: 'https://twitter.com/somali',
+//   },
+// ]
 
-export default Developers
+// const Developers = () => {
+//   return (
+//     <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 px-6 py-12 text-white">
+//       <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-12">
+//         Meet the Developers
+//       </h1>
+
+//       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-10">
+//         {developers.map((dev, index) => (
+//           <div
+//             key={index}
+//             className="
+//               bg-white/10 backdrop-blur-xl
+//               border border-white/20
+//               rounded-2xl p-8 flex flex-col items-center
+//               text-center cursor-pointer
+//               transform transition-all duration-300
+//               hover:scale-105 hover:bg-white/20
+//               hover:shadow-2xl hover:ring-2 hover:ring-indigo-400/50
+//             "
+//           >
+//             <img
+//               src={dev.image}
+//               alt={dev.name}
+//               className="w-32 h-32 rounded-full mb-4 shadow-lg border-2 border-white/30 object-cover"
+//             />
+//             <h2 className="text-2xl font-bold mb-2">{dev.name}</h2>
+//             <p className="text-white/80 mb-4">{dev.role}</p>
+
+//             <div className="flex space-x-4 text-white text-xl">
+//               <a href={dev.github} target="_blank" rel="noopener noreferrer" className="hover:text-indigo-400 transition">
+//                 <FaGithub />
+//               </a>
+//               <a href={dev.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition">
+//                 <FaLinkedin />
+//               </a>
+//               <a href={dev.twitter} target="_blank" rel="noopener noreferrer" className="hover:text-sky-400 transition">
+//                 <FaTwitter />
+//               </a>
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   )
+// }
+
+// export default Developers

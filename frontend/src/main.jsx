@@ -9,6 +9,8 @@ import HomePage from './pages/HomePage.jsx'
 import Developer from './pages/Developer.jsx'
 import ContactPage from './pages/ContactPage.jsx'
 import LoginPage from './pages/LoginPage.jsx'
+import Grade6CoursePage from './pages/Grade6CoursePage.jsx'
+import Grade8CoursePage from './pages/Grade8CoursePage.jsx'
 
 
 createRoot(document.getElementById('root')).render(
@@ -22,6 +24,8 @@ createRoot(document.getElementById('root')).render(
       <Route path='/developer' element={<Developer/>}/>
       <Route path='/contact' element={<ContactPage/>}/>
       <Route path='/login' element={<LoginPage/>}/>
+      <Route path='/grade6courses' element={<Grade6CoursePage/>}/>
+      <Route path='/grade8courses' element={<Grade8CoursePage/>}/>
       
     </Routes>
   </StrictMode>
