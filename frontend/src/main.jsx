@@ -11,6 +11,7 @@ import ContactPage from './pages/ContactPage.jsx'
 import LoginPage from './pages/LoginPage.jsx'
 import Grade6CoursePage from './pages/Grade6CoursePage.jsx'
 import Grade8CoursePage from './pages/Grade8CoursePage.jsx'
+import ManagePage from './pages/ManagePage.jsx'
 
 
 createRoot(document.getElementById('root')).render(
@@ -26,6 +27,7 @@ createRoot(document.getElementById('root')).render(
       <Route path='/login' element={<LoginPage/>}/>
       <Route path='/grade6courses' element={<Grade6CoursePage/>}/>
       <Route path='/grade8courses' element={<Grade8CoursePage/>}/>
+      <Route path='/manage' element={<ManagePage/>}/>
       
     </Routes>
   </StrictMode>

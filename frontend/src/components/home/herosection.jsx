@@ -1,4 +1,4 @@
-import bgImage from '../../assets/home.jpg';
+import bgImage from '../../assets/home.png';
 
 const HeroSection = () => {
   return (
@@ -40,13 +40,26 @@ const HeroSection = () => {
         </div>
 
         {/* Right Image */}
-        <div className="lg:w-1/2 mt-10 lg:mt-0 flex justify-center lg:justify-end animate-fadeIn">
-          <img
-            src={bgImage}
-            alt="Student Studying"
-            className="w-full max-w-lg rounded-2xl shadow-2xl border-2 border-white/20"
-          />
-        </div>
+       <div className="relative lg:w-1/2 mt-10 lg:mt-0 h-[450px] rounded-2xl overflow-hidden animate-fadeIn">
+
+  {/* Image */}
+  <img
+    src={bgImage}
+    alt="Student Studying"
+    className="w-full h-full object-cover"
+  />
+
+  {/* Left Side Gradient */}
+  <div className="absolute inset-y-0 left-0 w-1/3 
+    bg-gradient-to-r from-indigo-900/80 to-transparent">
+  </div>
+
+  {/* Right Side Gradient */}
+  <div className="absolute inset-y-0 right-0 w-1/3 
+    bg-gradient-to-l from-purple-900/80 to-transparent">
+  </div>
+
+</div>
 
       </div>
 
