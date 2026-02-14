@@ -2,7 +2,7 @@ import bgImage from '../../assets/home.jpg';
 
 const HeroSection = () => {
   return (
-    <div className="relative h-screen w-full overflow-hidden">
+    <div className="relative h-screen w-full overflow-hidden py-6">
       
       {/* Background Image with overlay */}
       <div

@@ -1,6 +1,6 @@
 import React from 'react'
-import Developers from '../components/developers/developers'
 import Footer from '../components/footers/footer'
+import Developers from '../components/developers/developers'
 
 const Developer = () => {
   return (
