@@ -1,24 +1,21 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Header from "./components/home/header";
 
 // Pages
-import HomePage from "./pages/HomePage";
+import Grade6Courses from "./components/courses/Grade6Courses";
+import AddCourses from "./components/manage/AddCourses";
+import ContactPage from "./pages/ContactPage";
+import Developer from "./pages/Developer";
 import Grade6Page from "./pages/Grade6Page";
 import Grade8Page from "./pages/Grade8Page";
-import Developer from "./pages/Developer";
-import ContactPage from "./pages/ContactPage";
+import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
-import Grade6CoursePage from "./pages/Grade6CoursePage";
-import Grade8CoursePage from "./pages/Grade8CoursePage";
 import ManagePage from "./pages/ManagePage";
-import AddCourses from "./components/manage/AddCourses";
-import Grade6Courses from "./components/courses/Grade6Courses";
 
 const App = () => {
   return (
     <>
-      <Header /> {/* ✅ Always visible */}
+      <Header /> 
 
       <Routes>
         <Route path="/" element={<HomePage />} />
