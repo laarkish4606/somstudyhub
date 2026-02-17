@@ -1,5 +1,7 @@
-
+import { useState } from "react";
+import AddQuestion from "../components/manage/AddQuestion";
 const ManagePage = () => {
+  const [open, setOpen] =useState(false);
     const courses = [
   { name: 'Mathematics', desc: 'Grade 8 Mathematics curriculum' },
 
@@ -39,32 +41,48 @@ const ManagePage = () => {
         <button
             className="
               bg-indigo-600 hover:bg-indigo-700
-              text-white px-6 py-2
+              mtext-white px-6 py-2
               rounded-full font-semibold
               transition-all duration-300
             "
           >
             Add Course
           </button>
-            <button
-            className="
-              bg-indigo-600 hover:bg-indigo-700
-              text-white px-6 py-1
-              rounded-full font-semibold
-              transition-all duration-300
-            "
-          >
-            Add Questions
-          </button>
+ <button
+  className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-full"
+  onClick={() => setOpen(true)}
+>
+  Add Questions
+</button>
+
+{open && (
+  <div className="absolute inset-x-0 top-0 bg-black bg-opacity-60 z-50 py-10">
+    
+    <div className="relative w-full max-w-3xl mx-auto">
+
+      {/* CLOSE BUTTON */}
+      <button
+        onClick={() => setOpen(false)}
+        className="absolute -top-4 -right-4 bg-white text-gray-700
+                   w-9 h-9 rounded-full shadow flex items-center justify-center
+                   hover:text-red-500"
+      >
+        ✕
+      </button>
+
+    
+      <div className="max-h-[80vh] overflow-y-auto p-6">
+        <AddQuestion />
+      </div>
+
+    </div>
+  </div>
+)}
+
       </div>
           
       </div>
 
-     
-
-     
-
-    
 
       {/* Courses Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -119,7 +137,9 @@ const ManagePage = () => {
       </div>
 
     </div>
+    
   );
+  
 };
 
 export default ManagePage;
