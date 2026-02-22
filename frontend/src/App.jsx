@@ -11,6 +11,7 @@ import LoginPage from "./pages/LoginPage";
 import ManagePage from "./pages/ManagePage";
 import Grade8Courses from "./components/courses/Grade8Courses";
 import EntrancePage from "./pages/EntrancePage";
+import Signup from "./components/principle/signup";
 
 const App = () => {
   return (
@@ -29,6 +30,8 @@ const App = () => {
         <Route path="/grade8/grade8courses" element={<Grade8Courses/>} />
         <Route path="/manage" element={<ManagePage />} />      
         <Route path="/manage/addcourses" element={<AddCourses />} />
+        <Route path="/signup" element={<Signup/>} />
+
       </Routes>
     </>
   );
