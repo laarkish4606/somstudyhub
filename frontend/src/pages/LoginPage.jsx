@@ -1,13 +1,10 @@
-import React from 'react'
-import Login from '../components/principle/login'
 import Footer from '../components/footers/footer'
-import Signup from '../components/principle/signup'
-import AddQuestion from '../components/manage/AddQuestion'
+import Login from '../components/principle/login'
 
 const LoginPage = () => {
   return (
     <div>
-        
+        <Login/>
         <Footer/>
     </div>
   )
