@@ -7,7 +7,7 @@ import AddQuestion from '../components/manage/AddQuestion'
 const LoginPage = () => {
   return (
     <div>
-        <AddQuestion/>
+        
         <Footer/>
     </div>
   )

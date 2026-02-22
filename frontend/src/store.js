@@ -1,20 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import courseReducer from "./features/courses/courseSlice.js";
-import { loadState, saveState } from "./utils/localStorage.js";
-
-
-const persistedState = loadState();
+import yearReducer from "./features/courses/yearsSlice.js";
 
 export const store = configureStore({
   reducer: {
     course: courseReducer,
+    year:yearReducer,
   },
-  preloadedState: persistedState, // 🔥 load saved data
 });
 
-// 🔥 Subscribe to store changes
-store.subscribe(() => {
-  saveState({
-    course: store.getState().course,
-  });
-});

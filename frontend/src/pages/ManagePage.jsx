@@ -1,7 +1,9 @@
 import { useState } from "react";
 import AddQuestion from "../components/manage/AddQuestion";
+import AddCourses from "../components/manage/AddCourses";
 const ManagePage = () => {
   const [open, setOpen] =useState(false);
+  const [isopen, setIsOpen] =useState(false);
     const courses = [
   { name: 'Mathematics', desc: 'Grade 8 Mathematics curriculum' },
 
@@ -37,7 +39,7 @@ const ManagePage = () => {
             Search
           </button>
         </div>
-         <div className="flex  rounded-full p-2 w-full max-w-md gap-4 ">
+         <div className="flex  rounded-full p-2 w-full max-w-md gap-4  ">
         <button
             className="
               bg-indigo-600 hover:bg-indigo-700
@@ -45,9 +47,34 @@ const ManagePage = () => {
               rounded-full font-semibold
               transition-all duration-300
             "
+          onClick={()=>setIsOpen(true)}
           >
             Add Course
           </button>
+          {isopen && (
+  <div className="absolute inset-x-0 top-0 z-50 py-10 ">
+    
+    <div className="relative w-[80vh] max-w-3xl mx-auto mt-10">
+
+      <button
+        onClick={() => setIsOpen(false)}
+        className="absolute -top-4 -right-4 bg-white text-gray-700
+                   w-9 h-9 rounded-full shadow flex items-center justify-center
+                   hover:text-red-500"
+      >
+        ✕
+      </button>
+
+    
+      <div className="max-h-[80vh] overflow-y-auto p-6">
+        <AddCourses/>
+      </div>
+
+    </div>
+  </div>
+)}
+          
+
  <button
   className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-full"
   onClick={() => setOpen(true)}
@@ -60,7 +87,6 @@ const ManagePage = () => {
     
     <div className="relative w-full max-w-3xl mx-auto">
 
-      {/* CLOSE BUTTON */}
       <button
         onClick={() => setOpen(false)}
         className="absolute -top-4 -right-4 bg-white text-gray-700
@@ -137,8 +163,9 @@ const ManagePage = () => {
       </div>
 
     </div>
-    
+   
   );
+  
   
 };
 
