@@ -1,15 +1,12 @@
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 
-const Grade8 = () => {
-  const navigate = useNavigate();
-
+const Entrance = () => {
   const years = useSelector((state) =>
-    state.year.years.filter((y) => y.grade === "grade8")
+    state.year.years.filter((y) => y.grade === "grade12")
   );
   const courses = useSelector((state) =>
   state.course.courses.filter(
-    (c) => c.grade === "grade8" && c.year === "2024"
+    (c) => c.grade === "grade12" && c.year === "2024"
   )
 );
 
@@ -18,12 +15,12 @@ const Grade8 = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 flex items-center justify-center px-6">
       <div className="max-w-6xl w-full">
         <h1 className="text-3xl md:text-4xl font-extrabold text-white text-center mb-10 tracking-wide">
-          Grade 8 Past Exams
+          Entrance Exam Past Exams
         </h1>
         <p className="text-white/80 text-center max-w-2xl mx-auto mb-10 text-sm md:text-base leading-relaxed">
-          Prepare smarter for your Grade 8 exams by practicing past papers.
-          Understand question formats, manage your time better, and boost your confidence.
-        </p>
+            Prepare with confidence by accessing previous entrance exam papers.
+            Practice real exam questions, understand patterns, and improve your chances of success.
+          </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {years.map((yea, index) => (
@@ -47,13 +44,13 @@ const Grade8 = () => {
             className="mt-6 px-6 py-2 bg-white text-indigo-600
              rounded-full font-semibold transition-all duration-300
              hover:bg-indigo-600 hover:text-white"
-              onClick={() =>
-                navigate("/grade8/grade8courses", {
-                  state: { year: yea.year },
-                })
-              }
+            //   onClick={() =>
+            //     navigate("/grade8/grade8courses", {
+            //       state: { year: yea.year },
+            //     })
+            //   }
             >
-              Explore Exams →
+           Explore Exams →
             </button>
 
             </div>
@@ -61,7 +58,7 @@ const Grade8 = () => {
 
           {years.length === 0 && (
             <p className="text-white text-center col-span-full">
-              No years added for Grade 8 yet.
+              No years added for Grade 12 entrance exam yet.
             </p>
           )}
         </div>
@@ -70,4 +67,4 @@ const Grade8 = () => {
   );
 };
 
-export default Grade8;
+export default Entrance;

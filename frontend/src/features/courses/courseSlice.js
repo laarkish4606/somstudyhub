@@ -1,23 +1,45 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  courses: [], // all added courses/years
+  courses: [],
+  cource:"",
+  courDes:"",
+  yearType:"",
+  grade:"",
 };
 
 const courseSlice = createSlice({
   name: "course",
   initialState,
   reducers: {
-    addCourse: (state, action) => {
-      state.courses.push(action.payload);
+   setCource :(state, action) => {
+     state.cource = action.payload;
     },
-    removeCourse: (state, action) => {
-      state.courses = state.courses.filter(
-        (course, index) => index !== action.payload
-      );
-    },
+    setCourDes :(state, action) => {
+      state.courDes = action.payload;
+     },
+     setYear:(state, action) => {
+      state.yearType = action.payload;
+     },
+      setGrades:(state, action) => {
+      state.grade = action.payload;
+     },
+     addCource:(state)=>{
+      state.courses.push({
+        name:state.cource,
+        description:state.courDes,
+        year:state.yearType,
+        grade:state.grade,
+      });
+     // localStorage.setItem("courses", JSON.stringify(state.courses));
+      state.cource = "";
+      state.courDes = "";
+      state.yearType = "";
+      state.grade = "";
+    
+     }
   },
 });
 
-export const { addCourse, removeCourse } = courseSlice.actions;
+export const { setCourDes, setCource ,addCource,setGrades,setYear} = courseSlice.actions;
 export default courseSlice.reducer;

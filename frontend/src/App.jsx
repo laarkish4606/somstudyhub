@@ -1,7 +1,5 @@
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/home/header";
-
-// Pages
 import Grade6Courses from "./components/courses/Grade6Courses";
 import AddCourses from "./components/manage/AddCourses";
 import ContactPage from "./pages/ContactPage";
@@ -11,6 +9,8 @@ import Grade8Page from "./pages/Grade8Page";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import ManagePage from "./pages/ManagePage";
+import Grade8Courses from "./components/courses/Grade8Courses";
+import EntrancePage from "./pages/EntrancePage";
 
 const App = () => {
   return (
@@ -21,10 +21,13 @@ const App = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/grade6" element={<Grade6Page />} />
         <Route path="/grade8" element={<Grade8Page />} />
+        <Route path="/entranceexam" element={<EntrancePage />} />
         <Route path="/developer" element={<Developer />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/grade6courses/:year" element={<Grade6Courses />} />        <Route path="/manage" element={<ManagePage />} />
+        <Route path="/grade6/grade6courses" element={<Grade6Courses/>} />
+        <Route path="/grade8/grade8courses" element={<Grade8Courses/>} />
+        <Route path="/manage" element={<ManagePage />} />      
         <Route path="/manage/addcourses" element={<AddCourses />} />
       </Routes>
     </>
