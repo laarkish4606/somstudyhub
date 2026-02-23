@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "question": "What does HTML stand for?",
+    "optionA": "Hyper Text Markup Language",
+    "optionB": "High Text Machine Language",
+    "optionC": "Hyperlink and Text Markup Language",
+    "optionD": "Home Tool Markup Language",
+    "ans": "optionA"
+  },
+  {
+    "id": 2,
+    "question": "Which language is used for styling web pages?",
+    "optionA": "HTML",
+    "optionB": "Python",
+    "optionC": "CSS",
+    "optionD": "Java",
+    "ans": "optionC"
+  },
+  {
+    "id": 3,
+    "question": "Which JavaScript method adds an item to the end of an array?",
+    "optionA": "shift()",
+    "optionB": "pop()",
+    "optionC": "push()",
+    "optionD": "unshift()",
+    "ans": "optionC"
+  },
+  {
+    "id": 4,
+    "question": "Which HTTP method is used to get data from a server?",
+    "optionA": "POST",
+    "optionB": "PUT",
+    "optionC": "GET",
+    "optionD": "DELETE",
+    "ans": "optionC"
+  },
+  {
+    "id": 5,
+    "question": "Which React hook is used to manage state?",
+    "optionA": "useEffect",
+    "optionB": "useContext",
+    "optionC": "useState",
+    "optionD": "useRef",
+    "ans": "optionC"
+  }
+]
