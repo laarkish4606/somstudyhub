@@ -12,6 +12,7 @@ import ManagePage from "./pages/ManagePage";
 import Grade8Courses from "./components/courses/Grade8Courses";
 import EntrancePage from "./pages/EntrancePage";
 import Signup from "./components/principle/signup";
+import MCQPage from "./pages/MCQPage";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
         <Route path="/grade8" element={<Grade8Page />} />
         <Route path="/entranceexam" element={<EntrancePage />} />
         <Route path="/developer" element={<Developer />} />
+        <Route path="/developer/mcq" element={<MCQPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/grade6/grade6courses" element={<Grade6Courses/>} />
