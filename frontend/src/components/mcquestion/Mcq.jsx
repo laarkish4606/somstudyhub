@@ -1,7 +1,9 @@
 import React, { useRef, useState } from "react";
 import data from "../../assets/data.json";
+import { useSelector } from "react-redux";
 
 const Mcq = () => {
+  const mcqs = useSelector((state) => state.mcq.mcqs);
   let [index, setIndex] = useState(0);
   let [lock, setLock] = useState(false);
   const [question,setQuestion] = useState(data[index]);
@@ -37,7 +39,7 @@ const Mcq = () => {
       selectedRef.classList.add("bg-red-200", "border-red-400", "text-red-800");
     }
 
-    // Also highlight the correct answer
+ 
     const correctRef = optionMap[question.ans].current;
     if (correctRef) {
       correctRef.classList.add("bg-green-200", "border-green-300", "text-green-800");
@@ -73,14 +75,13 @@ const nextQuestion = () => {
     const nextIndex = prev + 1;
 
     if (nextIndex < data.length) {
-      // Update question only if there are more questions
       setQuestion(data[nextIndex]);
       return nextIndex;
     } else {
-      // Last question reached → handle submission
       console.log("Quiz Completed! Your score:", score);
-      // You can trigger any "submit" action or show result here
-      return prev; // stay on the last question
+      setResult(true);
+      
+      return prev; 
     }
   });
 };
@@ -143,7 +144,12 @@ const previousQuestion = () => {
       {result ? <><h1 className="text-center text-xl font-bold text-indigo-700">Your Score: {score} out of {data.length}</h1>
       <button className="px-5 py-2 rounded-xl bg-indigo-600 text-white font-semibold transition-all duration-300 hover:bg-indigo-700 shadow-md mx-auto block" onClick={resetQuiz}>Reset</button></>:<>
           <h3 className="text-lg sm:text-xl font-semibold leading-relaxed text-center">
-          {index + 1}. {question.question}
+        {mcqs.length > 0 && mcqs[index] ? (
+          <p>{mcqs[index].question}</p>
+        ) : (
+          <p>Loading...</p>
+        )}
+
         </h3>
 
         <ul className="flex flex-col gap-3">
@@ -152,28 +158,48 @@ const previousQuestion = () => {
             className="px-5 py-3 rounded-lg cursor-pointer border border-gray-300 bg-gray-50 text-gray-700 transition-all duration-300 "
             onClick={() => checkAnswer("optionA")}
           >
-            {question.optionA}
+           {
+            mcqs.length > 0 && mcqs[index] ? (
+              <p>{mcqs[index].optionsA}</p>
+            ) : (
+              <p>Loading...</p>
+            )
+           }
           </li>
           <li
             ref={optionB}
             className="px-5 py-3 rounded-lg cursor-pointer border border-gray-300 bg-gray-50 text-gray-700 transition-all duration-300 "
             onClick={() => checkAnswer("optionB")}
           >
-            {question.optionB}
+           {
+            mcqs.length > 0 && mcqs[index] ? (
+              <p>{mcqs[index].optionsB}</p>
+            ) : ( 
+              <p>Loading...</p>
+            )
+           }  
           </li>
           <li
             ref={optionC}
             className="px-5 py-3 rounded-lg cursor-pointer border border-gray-300 bg-gray-50 text-gray-700 transition-all duration-300 "
             onClick={() => checkAnswer("optionC")}
           >
-            {question.optionC}
+            {mcqs.length > 0 && mcqs[index] ? (
+              <p>{mcqs[index].optionsC}</p>
+            ) : (
+              <p>Loading...</p>
+            )}
           </li>
           <li
             ref={optionD}
             className="px-5 py-3 rounded-lg cursor-pointer border border-gray-300 bg-gray-50 text-gray-700 transition-all duration-300 "
             onClick={() => checkAnswer("optionD")}
           >
-            {question.optionD}
+            {mcqs.length > 0 && mcqs[index] ? (
+              <p>{mcqs[index].optionsD}</p>
+            ) : (
+              <p>Loading...</p>
+            )}
           </li>
         </ul>
 
@@ -195,7 +221,7 @@ const previousQuestion = () => {
 
         <div className="text-center text-sm text-gray-500 mt-2">
           Question <span className="font-semibold">{index + 1}</span> of{" "}
-          <span className="font-semibold">{data.length}</span>
+          <span className="font-semibold">{mcqs.length}</span>
         </div>
 
       </> }
