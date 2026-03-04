@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  courses: [],
+  courses: JSON.parse(localStorage.getItem("courses")) || [],
   cource:"",
   courDes:"",
   yearType:"",
@@ -31,7 +31,7 @@ const courseSlice = createSlice({
         year:state.yearType,
         grade:state.grade,
       });
-     // localStorage.setItem("courses", JSON.stringify(state.courses));
+    localStorage.setItem("courses", JSON.stringify(state.courses));
       state.cource = "";
       state.courDes = "";
       state.yearType = "";
