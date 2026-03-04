@@ -1,6 +1,18 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setAddQuestion, setCorrectAnswer, setOptionsA, setOptionsB, setOptionsC, setOptionsD, setQuestion } from '../../features/courses/mcqSlice.js';
+import {
+  setAddQuestion,
+  setCorrectAnswer,
+  setOptionsA,
+  setOptionsB,
+  setOptionsC,
+  setOptionsD,
+  setQuestion,
+  setSelectedGrade,
+  setSelectedYear,
+  setSelectedCourse
+} from "../../features/courses/mcqSlice";
+
 const AddQuestion = () => {
 
 const years = useSelector((state) => state.year.years);
@@ -27,6 +39,7 @@ const handleSubmit=(e)=>{
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
            <select
             className="border border-gray-600 rounded px-4 py-2 w-full md:w-1/2 bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-400"
+           onChange={(e) => dispatch(setSelectedGrade(e.target.value))}
           >
             <option value="">Select Grade</option>
             {years.map((item, index) => (
@@ -39,6 +52,7 @@ const handleSubmit=(e)=>{
           </select>
           <select
             className="border border-gray-600 rounded px-4 py-2 w-full md:w-1/2 bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            onChange={(e) => dispatch(setSelectedCourse(e.target.value))}
           >
             <option value="">Select Subject</option>
            {
@@ -53,6 +67,7 @@ const handleSubmit=(e)=>{
 
           <select
             className="border border-gray-600 rounded px-4 py-2 w-full md:w-1/2 bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            onChange={(e) => dispatch(setSelectedYear(e.target.value))}
           >
             <option value="">Select Year</option>
             {
@@ -140,7 +155,7 @@ const handleSubmit=(e)=>{
   {/* Correct Answer */}
   <div className="flex flex-col">
     <label className="font-medium text-gray-200 mb-1">
-      Correct Answer (A / B / C / D)
+      Correct Answer (a / b / c / d)
     </label>
     <input
     onChange={(e)=>dispatch(setCorrectAnswer(e.target.value))}
